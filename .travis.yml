@@ -1,5 +1,5 @@
 language: node_js
 node_js:
   - "0.10"
-install: npm -g install gulp
+install: npm instal
 after_script: gulp run.test
