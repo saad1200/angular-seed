@@ -3,5 +3,5 @@ node_js:
   - "0.10"
 install: 
   - "npm instal"
-  - "bower instal"
+  - "bower install"
 after_script: gulp run.test
