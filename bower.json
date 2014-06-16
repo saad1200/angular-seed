@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "homepage": "https://github.com/saad1200/followme",
   "license": "MIT",
+  "directory" : "public/components",
   "ignore": [
     "**/.*",
     "node_modules",
