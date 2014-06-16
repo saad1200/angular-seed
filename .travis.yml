@@ -1,7 +1,7 @@
 language: node_js
 node_js:
   - "0.10"
-install: 
-  - "npm install"
-  - "bower install"
-after_script: gulp run.test
+after_script: 
+  - npm install
+  - npm install -g bower
+  - gulp run.test
