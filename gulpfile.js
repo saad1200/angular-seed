@@ -17,8 +17,6 @@ var sourceFiles = ['src/app/**/*.js'];
 
 var acceptanceTestFiles = ['protractor/**/*.js'];
 
-var exitCode = 0;
-
 gulp.task('start.test', function() {
     return gulp.src(testFiles)
         .pipe(karma({
@@ -30,16 +28,12 @@ gulp.task('start.test', function() {
 });
 
 gulp.task('run.test', function () {
-    gulp.src(testFiles)
+    return gulp.src(testFiles)
       .pipe(karma({
           configFile: 'karma.conf.js',
           singleRun: true,
       }))
-      .on('error', function (err) { 
-          console.log('error ..........')
-          exitCode = 1;
-         process.exit(1);});
-    return code;
+      .on('error', function (err) {process.exit(1);});
 });
 
 gulp.task('acceptance', function () {
@@ -64,9 +58,6 @@ gulp.task('watch', function () {
 
 gulp.task('default', ['lint', 'test', 'watch']);
 
-process.on('exit', function () {
-  process.nextTick(function () {
-      console.log(exitCode);
-    process.exit(exitCode)
-  })
-})
+process.on('exit', function (status) {
+    process.exit(status);
+});
