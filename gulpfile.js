@@ -33,7 +33,7 @@ gulp.task('run.test', function () {
           configFile: 'karma.conf.js',
           singleRun: true,
       }))
-      .on('error', function(err) { throw err; });
+      .on('error', function (err) {process.exit(1);});
 });
 
 gulp.task('acceptance', function () {
