@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - "0.10"
 after_script: 
-  - npm install
+  - npm fsdfsd
   - npm install -g bower
   - bower install
   - gulp run.test
