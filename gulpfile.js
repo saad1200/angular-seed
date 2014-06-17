@@ -29,14 +29,11 @@ gulp.task('start.test', function() {
 
 gulp.task('run.test', function () {
     return gulp.src(testFiles)
-        .pipe(karma({
-            configFile: 'karma.conf.js',
-            reporters: ['progress'],
-            singleRun: true
-        }))
-        .on('error', function (err) {
-            throw err;
-        });
+      .pipe(karma({
+          configFile: 'karma.conf.js',
+          singleRun: true,
+      }))
+      .on('error', function (err) {process.exit(1);});
 });
 
 gulp.task('acceptance', function () {
