@@ -57,8 +57,3 @@ gulp.task('watch', function () {
 });
 
 gulp.task('default', ['lint', 'test', 'watch']);
-
-process.on('exit', function (status) {
-    
-    process.exit(status);
-});
