@@ -3,6 +3,7 @@ var gulp = require('gulp');
 var karma = require('gulp-karma');
 var jshint = require('gulp-jshint');
 var protractor = require('gulp-protractor').protractor;
+var spawn = require('child_process').spawn;
 
 var testFiles = [
 	  'src/bower_components/angular/angular.js',
@@ -14,8 +15,6 @@ var testFiles = [
 ];
 
 var sourceFiles = ['src/app/**/*.js'];
-
-var acceptanceTestFiles = ['protractor/**/*.js'];
 
 gulp.task('start.test', function() {
     return gulp.src(testFiles)
@@ -37,12 +36,11 @@ gulp.task('run.test', function () {
 });
 
 gulp.task('acceptance', function () {
-var filesPattern = argv.specs ? ('protractor/' + argv.specs)  : 'protractor/**/*.js';
-    return gulp.src(filesPattern)
+    return gulp.src('userJourneys/*.js')
         .pipe(protractor({
-            configFile: "protractor.config.js",
-            args: ["--params.reporters.screenshot"]
-        }));
+            configFile: 'protractor.config.js'
+        }))
+    .on('error', function (err) {process.exit(1);});
 });
 
 gulp.task('lint', function() {
@@ -51,6 +49,12 @@ gulp.task('lint', function() {
     .pipe(jshint.reporter('jshint-stylish'));
 });
 
+
+gulp.task('webdriver-update', function(){
+  spawn('./node_modules/protractor/bin/webdriver-manager', ['update'], {
+    stdio: 'inherit'
+  });
+});
 
 gulp.task('watch', function () {
   gulp.watch([sourceFiles,testFiles,acceptanceTestFiles], ['lint']);

@@ -3,8 +3,11 @@ node_js:
   - "0.10"
 before_script:
   - npm install -g gulp
+  - npm install -g protractor 
   - npm install
   - npm install -g bower
   - bower install
 script: 
+  - gulp webdriver-update
   - gulp run.test
+  - gulp acceptance
