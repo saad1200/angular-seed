@@ -40,10 +40,7 @@ gulp.task('acceptance', function () {
         .pipe(protractor({
             configFile: 'protractor.config.js'
         }))
-    .on('error', function (err) {
-        throw err;
-        process.exit(1);}
-       );
+    .on('error', function (err) {process.exit(1);});
 });
 
 gulp.task('lint', function() {
