@@ -1,7 +1,7 @@
 {
   "name": "src",
   "version": "0.0.0",
-  "homepage": "https://github.com/saad1200/followme",
+  "homepage": "http://saad1200.github.io/angular-seed",
   "license": "MIT",
   "directory" : "public/components",
   "ignore": [

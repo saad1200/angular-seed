@@ -10,7 +10,7 @@ exports.config = {
     
     specs: ['./userJourneys/*.js'],
 
-    baseUrl: 'http://saad1200.github.io/',
+    baseUrl: 'http://localhost:4000',
 
     onPrepare: function () {
 			
