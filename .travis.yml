@@ -7,6 +7,8 @@ before_script:
   - npm install
   - npm install -g bower
   - bower install
+  - jekyll serve --detach
+  - sleep 3
 script: 
   - gulp webdriver-update
   - gulp run.test
