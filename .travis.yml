@@ -7,6 +7,7 @@ before_script:
   - npm install
   - npm install -g bower
   - bower install
+  - gem install jekyll
   - jekyll serve --detach
   - sleep 3
 script: 
