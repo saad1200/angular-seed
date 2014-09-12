@@ -2,7 +2,7 @@ describe("user should be able to visit home page", function () {
 
     var url = '';
 
-    it("Then ", function() {
+    it("Then see the page heading", function() {
 
         browser.visit(url);
 
