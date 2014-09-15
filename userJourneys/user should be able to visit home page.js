@@ -4,9 +4,9 @@ describe("user should be able to visit home page", function () {
 
     it("Then see the page heading", function() {
 
-//        browser.visit(url);
-//
-//        expect(element(by.id('heading')).getText()).toBe('Map');
+        browser.visit(url);
+
+        expect(element(by.id('heading')).getText()).toBe('Map');
     });
 
 });

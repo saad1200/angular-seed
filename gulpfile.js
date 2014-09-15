@@ -42,8 +42,7 @@ gulp.task('acceptance', function () {
     
     return gulp.src('userJourneys/*.js')
         .pipe(protractor({
-            configFile: 'protractor.config.js',
-            showStack: true
+            configFile: 'protractor.config.js'
         }));
 });
 
@@ -57,22 +56,6 @@ gulp.task('webdriver-update', function(){
 
 gulp.task('watch', function () {
   gulp.watch([sourceFiles,testFiles,acceptanceTestFiles], ['lint']);
-});
-
-gulp.task('check.server', function (cb) {
-
-    var http = require('http');
-    var options = {
-      host: 'localhost',
-      port: '4000',
-      path: ''
-    };
-
-    var req = http.get(options, function(res) {
-      console.log(res.statusCode === 200 ? 'Server is running' : 'Server is not running');
-        cb();
-    });   
-    
 });
 
 gulp.task('default', ['lint', 'test', 'watch']);
