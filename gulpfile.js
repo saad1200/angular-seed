@@ -48,27 +48,31 @@ gulp.task('acceptance', function () {
 });
 
 gulp.task('webdriver-update', function(){
+    
   spawn('./node_modules/protractor/bin/webdriver-manager', ['update'], {
     stdio: 'inherit'
   });
+    
 });
 
 gulp.task('watch', function () {
   gulp.watch([sourceFiles,testFiles,acceptanceTestFiles], ['lint']);
 });
 
-gulp.task('check.server', function () {
+gulp.task('check.server', function (cb) {
 
     var http = require('http');
     var options = {
       host: 'localhost',
       port: '4000',
-      path: '/#'
+      path: ''
     };
 
     var req = http.get(options, function(res) {
       console.log(res.statusCode === 200 ? 'Server is running' : 'Server is not running');
+        cb();
     });   
+    
 });
 
 gulp.task('default', ['lint', 'test', 'watch']);
