@@ -19,8 +19,7 @@
     "gulp": "^3.8.0",
     "node-static": "^0.7.5",
     "gutil": "^1.5.5",
-    "gulp-util": "^3.0.1",
-    "jasmine-reporters": "^2.0.3"
+    "gulp-util": "^3.0.1"
   },
   "scripts": {},
   "author": "",
