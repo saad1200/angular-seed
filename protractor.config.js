@@ -1,4 +1,3 @@
-
 exports.config = {
 
     chromeOnly: true,
@@ -14,14 +13,11 @@ exports.config = {
 
     onPrepare: function () {
 			
-        global.wait = function(condition, timeout) {
-            browser.wait(function () { return browser.driver.isElementPresent(condition); }, timeout);
-        };
-        browser.visit = function (url) {
-            browser.manage().window().maximize();
-            return browser.get(url);
-        };
-
+//        browser.visit = function (url) {
+//            browser.manage().window().maximize();
+//            return browser.get(url);
+//        };
+        
     },
     
     jasmineNodeOpts: {
@@ -29,7 +25,7 @@ exports.config = {
         },
         showColors: true,
         isVerbose: true,
-        includeStackTrace: false,
+        includeStackTrace: true,
         defaultTimeoutInterval: 30000
     }
 };

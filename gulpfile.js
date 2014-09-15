@@ -58,27 +58,27 @@ gulp.task('watch', function () {
 
 gulp.task('default', ['lint', 'test', 'watch']);
 
-gulp.on('err', function(e){
-    var msg = formatError(e);
-    gutil.log('Build failed: ', gutil.colors.red(msg));
-    process.exit(1);
-});
-
-function formatError(e) {
-  if (!e.err) {
-    return e.message;
-  }
-
-  // PluginError
-  if (typeof e.err.showStack === 'boolean') {
-    return e.err.toString();
-  }
-
-  // normal error
-  if (e.err.stack) {
-    return e.err.stack;
-  }
-
-  // unknown (string, number, etc.)
-  return new Error(String(e.err)).stack;
-}
+//gulp.on('err', function(e){
+//    var msg = formatError(e);
+//    gutil.log('Build failed: ', gutil.colors.red(msg));
+//    process.exit(1);
+//});
+//
+//function formatError(e) {
+//  if (!e.err) {
+//    return e.message;
+//  }
+//
+//  // PluginError
+//  if (typeof e.err.showStack === 'boolean') {
+//    return e.err.toString();
+//  }
+//
+//  // normal error
+//  if (e.err.stack) {
+//    return e.err.stack;
+//  }
+//
+//  // unknown (string, number, etc.)
+//  return new Error(String(e.err)).stack;
+//}

@@ -6,6 +6,7 @@ before_script:
   - npm install -g protractor 
   - npm install
   - npm install -g bower
+  - npm coveralls
   - bower install
   - gem install jekyll
   - jekyll serve --detach
