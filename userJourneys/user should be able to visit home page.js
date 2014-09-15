@@ -6,7 +6,7 @@ describe("user should be able to visit home page", function () {
 
         browser.visit(url);
 
-        expect(element(by.id('heading')).getText()).toBe('Map1');
+        expect(element(by.id('heading')).getText()).toBe('Map');
     });
 
 });
