@@ -16,7 +16,10 @@
     "querystring": "^0.2.0",
     "requirejs": "^2.1.11",
     "yargs": "^1.2.2",
-    "gulp": "^3.8.0"
+    "gulp": "^3.8.0",
+    "node-static": "^0.7.5",
+    "gutil": "^1.5.5",
+    "gulp-util": "^3.0.1"
   },
   "scripts": {},
   "author": "",
