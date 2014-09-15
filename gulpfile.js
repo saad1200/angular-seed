@@ -61,8 +61,9 @@ gulp.task('check.server', function () {
 
     var http = require('http');
     var options = {
-      host: 'www.google.com',
-      path: '/index.html'
+      host: 'localhost',
+      port: '4000',
+      path: '/#'
     };
 
     var req = http.get(options, function(res) {
