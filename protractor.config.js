@@ -1,13 +1,13 @@
 exports.config = {
 
     chromeOnly: true,
-    chromeDriver: './node_modules/protractor/selenium/chromedriver',
+//    chromeDriver: './node_modules/protractor/selenium/chromedriver',
 
     capabilities: {
         'browserName': 'chrome'
-    },
+    }//,
     
-    specs: ['./userJourneys/*.js']//,
+//    specs: ['./userJourneys/*.js'],
 
 //    baseUrl: 'http://localhosttest:4000',
 //
