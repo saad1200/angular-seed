@@ -13,4 +13,5 @@ before_script:
 script: 
   - gulp webdriver-update
   - gulp run.test
+  - gulp check.server
   - gulp acceptance
