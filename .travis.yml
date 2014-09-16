@@ -14,7 +14,6 @@ before_script:
 script:
 - gulp run.test
 - gulp acceptance
-- npm run-script deploy
 after_success: ./deploy-ghpages.sh
 env:
   global:
