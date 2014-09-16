@@ -14,6 +14,7 @@ before_script:
 script:
 - gulp run.test
 - gulp acceptance
+- chmod -R 777 ./deploy-ghpages.sh
 after_success: "./deploy-ghpages.sh"
 env:
   global:
