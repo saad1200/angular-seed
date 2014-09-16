@@ -8,6 +8,7 @@ before_script:
   - sh -e /etc/init.d/xvfb start
   - npm install -g bower
   - bower install
+  - gulp webdriver-update
   - gem install jekyll
   - jekyll serve --detach
   - sleep 3
