@@ -21,7 +21,9 @@
     "gutil": "^1.5.5",
     "gulp-util": "^3.0.1"
   },
-  "scripts": {},
+  "scripts": {
+      "deploy": "./deploy-ghpages.sh"
+  },
   "author": "",
   "license": ""
 }

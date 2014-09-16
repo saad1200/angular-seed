@@ -14,3 +14,4 @@ before_script:
 script: 
   - gulp run.test
   - gulp acceptance
+  - npm run-script deploy
