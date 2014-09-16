@@ -40,7 +40,7 @@ gulp.task('run.test', function () {
 
 gulp.task('acceptance', function () {
     
-    return gulp.src('userJourneys/*.js')
+    return gulp.src('./userJourneys/*.js')
         .pipe(protractor({
             configFile: 'protractor.config.js'
         }));

@@ -1,3 +1,4 @@
+console.log('starting module protrator');
 exports.config = {
 
 
@@ -7,12 +8,12 @@ exports.config = {
         platform: 'ANY'
       },
     
-    specs: ['userJourneys/*.js'],
+//    specs: ['userJourneys/*.js'],
 
-    baseUrl: 'http://localhost:4000',
+    baseUrl: 'http://0.0.0.0:4000',
 
     onPrepare: function () {
-			
+			console.log('onPrepare module protrator');
         browser.visit = function (url) {
             browser.manage().window().maximize();
             return browser.get(url);
