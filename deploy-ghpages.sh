@@ -1,17 +1,3 @@
-#!/bin/bash
-rm -rf out || exit 0;
-mkdir out; 
-node build.js
-( cd out
- git init
- git config user.name "saad1200
- git config user.email "saad1200@gmail.com"
- cp -r ../src .
- git add .
- git commit -m "Deployed to Github Pages"
- git push --force --quiet "https://b0b7eadfc6dc37eca072dd0882e8f51a2fb23c0d@${GH_REF}" master:gh-pages > /dev/null 2>&1
-)
-
 if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
   echo -e "Starting to update gh-pages\n"
 
