@@ -42,7 +42,8 @@ gulp.task('acceptance', function () {
     
     return gulp.src('./userJourneys/*.js')
         .pipe(protractor({
-            configFile: 'protractor.config.js'
+            configFile: 'protractor.config.js',
+            args: ['--baseUrl', 'http://0.0.0.0:4000'],
         }));
 });
 
