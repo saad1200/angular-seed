@@ -2,7 +2,7 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
   echo -e "Starting to update gh-pages\n"
 
   #copy data we're interested in to other place
-  cp -R coverage $HOME/coverage
+  cp -R src $HOME/src
 
   #go to home and setup git
   cd $HOME
@@ -10,7 +10,7 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
   git config --global user.name "Travis"
 
   #using token clone gh-pages branch
-  git clone --quiet --branch=gh-pages https://${GH_TOKEN}@github.com/saad1200/angular-seed  gh-pages > /dev/null
+  git clone --quiet --branch=gh-pages https://${GH_TOKEN}@github.com/saad1200/angular-seed.git  gh-pages > /dev/null
 
   #go into diractory and copy data we're interested in to that directory
   cd gh-pages
@@ -21,5 +21,5 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
   git commit -m "Travis build $TRAVIS_BUILD_NUMBER pushed to gh-pages"
   git push -fq origin gh-pages > /dev/null
 
-  echo -e "Done magic with coverage\n"
+  echo -e "Deployed successfully\n"
 fi
