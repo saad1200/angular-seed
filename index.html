@@ -1,7 +1,20 @@
----
-layout: default
-title: Hello World!
----
+<!DOCTYPE html>
+<html id="ng-app" data-ng-app="app">
+  <head>
+   </head>
+  <body>
 
-<h1>Hello world!</h1>
-<p>This is my first Jekyll website.</p>
+      <div data-ng-view></div>
+      
+      <script src="bower_components/angular/angular.min.js"></script>
+      <script src="bower_components/angular-route/angular-route.min.js"></script>
+      
+      <!-- Bootstrapping -->
+      <script type="text/javascript" src="app/app.js"></script>
+      <script type="text/javascript" src="app/config/config.route.js"></script>
+      
+      <!-- app -->
+      
+  </body>
+</html>
+    
