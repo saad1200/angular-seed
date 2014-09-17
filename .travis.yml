@@ -10,7 +10,7 @@ before_script:
 - jekyll serve --detach
 - sleep 3
 script:
-- gulp all-tests
+- grunt all-tests
 - chmod +x ./deploy-ghpages.sh
 after_success: "./deploy-ghpages.sh"
 env:
