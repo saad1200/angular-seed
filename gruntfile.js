@@ -6,7 +6,6 @@ module.exports = function(grunt) {
         karma: {
             options: { 
                 configFile: 'config/karma.conf.js', 
-                browsers: ['PhantomJS'],
                 thresholdReporter: {
                   statements: 90,
                   branches: 60,
@@ -19,6 +18,7 @@ module.exports = function(grunt) {
             },
             continuous: { 
                 singleRun: true,
+                browsers: ['PhantomJS'],
                 coverageReporter: {type: 'lcov', dir:'../coverage/'},
             }
         },
@@ -64,7 +64,7 @@ module.exports = function(grunt) {
     grunt.registerTask('start-server', ['shell:startJekyll']);
     grunt.registerTask('acceptance', ['shell:updateLocalWebdriver', 'protractor:local']);
     grunt.registerTask('acceptance-ci', ['protractor:ci']);
-    grunt.registerTask('all', ['jslint', 'karma:continuous', 'shell:updateCiWebdriver', 'coveralls', 'protractor:ci']);
+    grunt.registerTask('all', ['jslint', 'karma:continuous', 'shell:updateCiWebdriver', 'protractor:ci']);
     grunt.registerTask('unit', ['karma:unit']);
     grunt.registerTask('continuous', ['karma:continuous']);
     grunt.registerTask('submit.coverage', ['coveralls']);
