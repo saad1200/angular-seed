@@ -12,9 +12,9 @@ before_script:
 - sleep 3
 script:
 - grunt all
-- chmod +x ./deploy-ghpages.sh
 after_success:
 - grunt submit.coverage
+- chmod +x ./deploy-ghpages.sh
 - "./deploy-ghpages.sh"
 env:
   global:
