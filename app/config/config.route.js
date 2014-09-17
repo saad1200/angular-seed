@@ -1,34 +1,21 @@
 (function () {
     'use strict';
 
-    var app = angular.module('app');
-
-    // Collect the routes
-    app.constant('routes', getRoutes());
-
-    // Configure the routes and route resolvers
-    app
-        .config(['$routeProvider', 'routes', '$httpProvider', routeConfigurator])
-        .run(['$location', '$route', run]);
-
-    function run($location, $route) {
+    function getRoutes() {
+        return [
+            { url: '/', config: {templateUrl: 'app/map/map.html'} }
+        ];
     }
 
-    function routeConfigurator($routeProvider, routes, $httpProvider) {
-        
+    function routeConfigurator($routeProvider, routes) {
+
         routes.forEach(function (r) { $routeProvider.when(r.url, r.config); });
         $routeProvider.otherwise({ redirectTo: '/' });
     }
 
-    // Define the routes 
-    function getRoutes() {
-        return [
-            {
-                url: '/',
-                config: {
-                    templateUrl: 'app/map/map.html',
-                }
-            }
-        ];
-    }
-})();
+    angular.module('app')
+        .constant('routes', getRoutes())
+        .config(['$routeProvider', 'routes', routeConfigurator])
+        .run();
+
+}());
