@@ -48,12 +48,8 @@ module.exports = function(grunt) {
         },
         
         coveralls: {
-            options: {
-                coverage_dir: 'coverage',
-                dryRun: true,
-                force: true,
-                recursive: true
-            }
+            src: 'coverage/**/lcov.info',
+            options: { force: false }
         }
         
     });
@@ -62,15 +58,17 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('grunt-jslint');
     grunt.loadNpmTasks('grunt-protractor-runner');
-    grunt.loadNpmTasks('grunt-karma-coveralls');
+    grunt.loadNpmTasks('grunt-coveralls');
     
     grunt.registerTask('lint', ['jslint']);
     grunt.registerTask('start-server', ['shell:startJekyll']);
     grunt.registerTask('acceptance', ['shell:updateLocalWebdriver', 'protractor:local']);
     grunt.registerTask('acceptance-ci', ['protractor:ci']);
-    grunt.registerTask('all-tests', ['jslint', 'karma:continuous', 'shell:updateCiWebdriver', 'protractor:ci', 'coveralls']);
+    grunt.registerTask('all', ['jslint', 'karma:continuous', 'shell:updateCiWebdriver', 'coveralls', 'protractor:ci']);
     grunt.registerTask('unit', ['karma:unit']);
-    grunt.registerTask('continuous', ['karma:continuous',]);
+    grunt.registerTask('continuous', ['karma:continuous']);
+    grunt.registerTask('submit.coverage', ['coveralls']);
+    
     grunt.registerTask('default', ['']);
     
 };
