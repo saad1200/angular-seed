@@ -1,15 +1,14 @@
 
 exports.config = {
 
-    chromeOnly: true,
-    chromeDriver: './node_modules/protractor/selenium/chromedriver',
-
     capabilities: {
-        'browserName': 'chrome'
+        'browserName': 'phantomjs'
     },
+        
+    specs: ['../userJourneys/*.js'],
     
-    specs: ['./userJourneys/*.js'],
-
+    baseUrl: 'http://0.0.0.0:4000',
+    
     onPrepare: function () {
 			
         global.wait = function(condition, timeout) {
@@ -23,11 +22,7 @@ exports.config = {
     },
     
     jasmineNodeOpts: {
-        onComplete: function () {
-        },
         showColors: true,
-        isVerbose: true,
-        includeStackTrace: false,
         defaultTimeoutInterval: 30000
     }
 };

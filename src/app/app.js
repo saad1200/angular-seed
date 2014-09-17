@@ -3,11 +3,7 @@
 
 //    var common = angular.module('common', []);
 
-    var app = angular.module('app', [
-        // Angular modules 
+    angular.module('app', [
         'ngRoute'
-        
-        // Application Modules
     ]);
-
-})();
+}());

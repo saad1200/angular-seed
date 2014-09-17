@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "homepage": "http://saad1200.github.io/angular-seed",
   "license": "MIT",
-  "directory" : "public/components",
+  "directory": "public/components",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -11,8 +11,12 @@
     "test",
     "tests"
   ],
-  "dependencies": {
-    "angular": "1.3.0-beta.11",
-    "angular-route": "1.3.0-beta.11"
+  "resolutions": {
+    "angular": "1.2.24"
+  },
+  "devDependencies": {
+    "angular": "~1.2.24",
+    "angular-route": "~1.2.24",
+    "angular-mocks": "~1.2.24"
   }
 }

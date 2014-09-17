@@ -1,12 +1,15 @@
-describe("user should be able to visit home page", function () {
+(function () {
+    'use strict';
+    describe("user should be able to visit home page", function () {
 
-    var url = '';
+        var url = '';
 
-    it("Then see the page heading", function() {
+        it("Then see the page heading", function () {
 
-        browser.visit(url);
+            browser.visit(url);
 
-        expect(element(by.id('heading')).getText()).toBe('Map');
+            expect(element(by.id('heading')).getText()).toBe('Map');
+        });
+
     });
-
-});
+}());

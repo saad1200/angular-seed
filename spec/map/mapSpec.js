@@ -1,7 +1,10 @@
-describe('Sample spec', function () {
+(function () {
+    'use strict';
+    describe('Sample spec', function () {
 
-	it('sample test', function(){
-		expect(true).toBe(true);
-	});
+        it('sample test', function () {
+            expect(true).toBe(true);
+        });
 
-});
+    });
+}());
