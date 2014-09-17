@@ -7,13 +7,16 @@ before_script:
 - npm install -g grunt-cli
 - npm install -g bower
 - bower install
+- npm install -g coveralls
 - gem install jekyll
 - jekyll serve --detach
 - sleep 3
 script:
 - grunt all-tests
 - chmod +x ./deploy-ghpages.sh
-after_success: "./deploy-ghpages.sh"
+after_success: 
+- coveralls
+- "./deploy-ghpages.sh"
 env:
   global:
     secure: HAEIYUKhwQ/e51MdHjhn/Z6AlbzTXRNVXyZyZPeHNkdpb1epMM+a3PvuEQv4mwC7p8aMx0IjCSW2cMWustugMq93HxowipavRI2VUfmA/G5iF8MixbiexZpo2/TR98BZ0FYBFPSidrKUvfRyMSxe6RTX9LmU8ePmZgc6fjfUrWQ=
