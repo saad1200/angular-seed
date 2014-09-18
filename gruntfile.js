@@ -26,7 +26,8 @@ module.exports = function(grunt) {
         protractor: {
             options: { configFile: "node_modules/protractor/referenceConf.js" },
             local: { options: {configFile: "config/protractor.config.js" } },
-            ci: { options: { configFile: "config/protractor.config.ci.js" }}
+            ci: { options: { configFile: "config/protractor.config.ci.js" }},
+            cucumber: { options: { configFile: "config/protractor.config.cucumber.js" }}
         },
 
         jslint: {
@@ -51,6 +52,21 @@ module.exports = function(grunt) {
         coveralls: {
             src: 'coverage/**/lcov.info',
             options: { force: false }
+        },
+        
+        watch: {
+          cucumber: {
+            files: ['features/**/*.js', 'script/**/*.js'],
+            tasks: ['cucumberjs']
+          }
+        },
+        
+        cucumberjs: {
+          src: 'features',
+          options: {
+            steps: 'features/step_definitions',
+            format: 'pretty'
+          }
         }
         
     });
@@ -60,17 +76,21 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-jslint');
     grunt.loadNpmTasks('grunt-protractor-runner');
     grunt.loadNpmTasks('grunt-coveralls');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-cucumber');
     
     grunt.registerTask('lint', ['jslint']);
-    grunt.registerTask('start-server', ['shell:startJekyll']);
+    grunt.registerTask('start.server', ['shell:startJekyll']);
     grunt.registerTask('acceptance', ['shell:updateLocalWebdriver', 'protractor:local']);
     grunt.registerTask('acceptance-ci', ['protractor:ci']);
+    grunt.registerTask('acceptance-cucumber', ['protractor:cucumber']);
     grunt.registerTask('all', ['jslint', 'karma:continuous', 'shell:updateCiWebdriver', 'protractor:ci']);
     grunt.registerTask('unit', ['karma:unit']);
     grunt.registerTask('continuous', ['karma:continuous']);
     grunt.registerTask('submit.coverage', ['coveralls']);
     grunt.registerTask('update.packages', ['shell:updatepackages']);
-    
+    grunt.registerTask('cucumber', ['cucumberjs']);
+    grunt.registerTask('watch.tests', 'Starts a watch for test automation.', ['watch:cucumber']);
     grunt.registerTask('default', ['']);
     
 };
