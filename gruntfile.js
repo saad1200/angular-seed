@@ -45,6 +45,7 @@ module.exports = function(grunt) {
             updateLocalWebdriver: { command: './node_modules/protractor/bin/webdriver-manager update' },
             updateCiWebdriver: { command: './node_modules/grunt-protractor-runner/node_modules/protractor/bin/webdriver-manager update' },
             startJekyll: { command: 'jekyll serve --watch' },
+            updatepackages: { command: 'npm-check-updates -u' },
         },
         
         coveralls: {
@@ -68,6 +69,7 @@ module.exports = function(grunt) {
     grunt.registerTask('unit', ['karma:unit']);
     grunt.registerTask('continuous', ['karma:continuous']);
     grunt.registerTask('submit.coverage', ['coveralls']);
+    grunt.registerTask('update.packages', ['shell:updatepackages']);
     
     grunt.registerTask('default', ['']);
     
