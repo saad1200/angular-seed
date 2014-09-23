@@ -5,6 +5,4 @@ Feature: Sample
   
     Scenario: First sample
         Given i am on the home page
-
-    Scenario: Second sample
-        Given this is the second sample
+        Then i should see "welcome anguler-seed customer" message

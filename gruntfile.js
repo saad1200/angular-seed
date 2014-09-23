@@ -54,21 +54,6 @@ module.exports = function(grunt) {
             options: { force: false }
         },
         
-        watch: {
-          cucumber: {
-            files: ['features/**/*.js', 'script/**/*.js'],
-            tasks: ['cucumberjs']
-          }
-        },
-        
-        cucumberjs: {
-          src: 'features',
-          options: {
-            steps: 'features/step_definitions',
-            format: 'pretty'
-          }
-        }
-        
     });
         
     grunt.loadNpmTasks('grunt-karma');
@@ -76,8 +61,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-jslint');
     grunt.loadNpmTasks('grunt-protractor-runner');
     grunt.loadNpmTasks('grunt-coveralls');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-cucumber');
     
     grunt.registerTask('lint', ['jslint']);
     grunt.registerTask('start.server', ['shell:startJekyll']);
@@ -89,8 +72,6 @@ module.exports = function(grunt) {
     grunt.registerTask('continuous', ['karma:continuous']);
     grunt.registerTask('submit.coverage', ['coveralls']);
     grunt.registerTask('update.packages', ['shell:updatepackages']);
-    grunt.registerTask('cucumber', ['cucumberjs']);
-    grunt.registerTask('watch.tests', 'Starts a watch for test automation.', ['watch:cucumber']);
     grunt.registerTask('default', ['']);
     
 };
