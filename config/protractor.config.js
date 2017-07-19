@@ -2,7 +2,7 @@
 exports.config = {
 
     chromeOnly: true,
-    chromeDriver: '../node_modules/protractor/selenium/chromedriver',
+    chromeDriver: '../node_modules/protractor/node_modules/webdriver-manager/selenium/chromedriver_2.30',
 
     capabilities: {
         'browserName': 'chrome'
@@ -25,8 +25,6 @@ exports.config = {
     },
     
     jasmineNodeOpts: {
-        onComplete: function () {
-        },
         showColors: true,
         isVerbose: true,
         includeStackTrace: false,

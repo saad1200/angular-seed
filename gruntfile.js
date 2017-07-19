@@ -67,7 +67,7 @@ module.exports = function(grunt) {
     grunt.registerTask('acceptance', ['shell:updateLocalWebdriver', 'protractor:local']);
     grunt.registerTask('acceptance-ci', ['protractor:ci']);
     grunt.registerTask('acceptance-cucumber', ['protractor:cucumber']);
-    grunt.registerTask('all', ['jslint', 'karma:continuous', 'shell:updateCiWebdriver', 'protractor:ci']);
+    grunt.registerTask('all', ['jslint', 'karma:continuous', 'shell:updateLocalWebdriver', 'protractor:local']);
     grunt.registerTask('unit', ['karma:unit']);
     grunt.registerTask('continuous', ['karma:continuous']);
     grunt.registerTask('submit.coverage', ['coveralls']);
